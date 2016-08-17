@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Building my first CLI gem, Sport-Stats"
-date:   2016-08-17 15:02:08 +0000
+date:   2016-08-17 11:02:08 -0400
 ---
 
 Starting a new project from a blank slate was pretty daunting. Finishing, however, was quite the feeling. Cue the Rocky song!
@@ -100,7 +100,7 @@ def self.make_players(team, doc)
 
 So my biggest challenge at first was getting the information to display properly. This was basically impossible with all the looping, and I realized I needed proper objects. This also lead me to find a very handy ruby gem called Command Line Reporter (Actually, another student named Brian Reynolds pointed me in that direction. Shout out to Brian!). CLR does a lot of neat things, but most importantly for me, it provides us with a nice looking table for our information. 
 
-![](http://imgur.com/KMwoIMZ)
+![](http://i.imgur.com/KMwoIMZ.png)
 
 Here's how I set that up (note: you have to extend CommandLineReporter):
 ```
@@ -188,7 +188,7 @@ So in order to deal with the varying categories, I set up an empty array for 'ti
 
 Then we start our table. In the first row, we loop through each title and create columns. If the title is a certain word, we make the column wider to accomodate for longer names/words. In the end, we get this:
 
-![](http://imgur.com/bbKRhaY)
+![](http://i.imgur.com/bbKRhaY.png)
 
 Here's a video showing the CLI in use (might need to go full-screen to see the text):
 <iframe width="720" height="500" src="https://www.youtube.com/embed/JD98hxZAfEI" frameborder="0" allowfullscreen></iframe>
