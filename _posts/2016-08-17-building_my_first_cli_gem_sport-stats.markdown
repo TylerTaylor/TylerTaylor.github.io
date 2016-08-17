@@ -50,7 +50,6 @@ end
 All 3 of the sports have number, name, position, height/weight,and college columns. That leaves us with 6 other attributes we may or may not have. That's where ```||=``` comes in! If the value to the left is nil or false, it will check the value on the right. If the value on the right exists, it sets the variable to that value. If not, it remains nil.
 
 The params that get passed into the Player class look like this:
-
 ```
 {"NO."=>"21", "NAME"=>"Ian Clark", "POS"=>"SG", "AGE"=>"25", "HT"=>"6-3", "WT"=>"175", "COLLEGE"=>"Belmont", "2016-2017 SALARY"=>"$980,431"}
 ```
