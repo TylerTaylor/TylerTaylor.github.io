@@ -201,4 +201,4 @@ Here's a video showing the CLI in use (might need to go full-screen to see the t
 
 There was a bit of head scratching on this project, mostly due to scraping a bunch of unlabeled ```<td>``` elements. Overall, it was a very fun project, and has me excited for what's to come! 
 
-You can check out the gem on github at https://github.com/TylerTaylor/sport-stats and feel free to message me if you have any questions.
+You can check out the gem on github at [https://github.com/TylerTaylor/sport-stats](https://github.com/TylerTaylor/sport-stats) and feel free to message me if you have any questions.
