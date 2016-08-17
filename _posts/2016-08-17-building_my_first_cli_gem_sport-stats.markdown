@@ -60,46 +60,46 @@ Here's my roster scraping method.
 
 ```
 def self.scrape_roster(input, doc)
-    doc.search(".standings-row td").each do |x|
-      if input == x.css("span.team-names").text # if x is equal to the team name input
-        team_page_link = "http://espn.com#{x.search('a').attr('href').value}"
-        team_page = Nokogiri::HTML(open(team_page_link)) 
-        @players = []
-        
-        team_page.css("span.link-text").each do |text|
-          if text.text == "Roster"
-            link = Nokogiri::HTML(open(text.parent.attr('href')))
-            
-            @categories = [] # These will be used for player attributes
-            link.search('tr.colhead').first.children.each do |cat|
-              @categories << cat.text
-            end
+	doc.search(".standings-row td").each do |x|
+		if input == x.css("span.team-names").text # if x is equal to the team name input
+			team_page_link = "http://espn.com#{x.search('a').attr('href').value}"
+			team_page = Nokogiri::HTML(open(team_page_link)) 
+			@players = []
 
-            link.css('tr.evenrow, tr.oddrow').each do |word|
-              player_info = [] # name, age, etc, player attr values
-              word.children.each do |word|
-                player_info << word.text
-              end
+			team_page.css("span.link-text").each do |text|
+				if text.text == "Roster"
+					link = Nokogiri::HTML(open(text.parent.attr('href')))
 
-              player_line = Hash[@categories.zip(player_info)]
-              @players << player_line
-            end
-          end # end if
-        end # end .each
-      end # end if
-    end # end doc.search
-  end
+					@categories = [] # These will be used for player attributes
+					link.search('tr.colhead').first.children.each do |cat|
+						@categories << cat.text
+					end
+
+					link.css('tr.evenrow, tr.oddrow').each do |word|
+						player_info = [] # name, age, etc, player attr values
+						word.children.each do |word|
+							player_info << word.text
+						end
+
+						player_line = Hash[@categories.zip(player_info)]
+						@players << player_line
+					end
+				end # end if
+			end # end .each
+		end # end if
+	end # end doc.search
+end
 ```
 
 You can see I set up a categories array, and a player info array. Nokogiri scrapes the specified elements and puts them in their proper container. This is basically how I had the whole program set up before. It would collect the elements like above, then I'd use a loop to print each value out. I had to do this for each league, and each roster. It was very, very messy. Now it neatly combines the player information, then passes it to a make_players method that creates each individual Player object with proper attributes.
 
 ```
 def self.make_players(team, doc)
-    self.scrape_roster(team, doc) # scrape_roster returns @players with a hash of their info
-    @players.each do |player|
-      SportStats::Player.new(player)
-    end
-  end
+	self.scrape_roster(team, doc) # scrape_roster returns @players with a hash of their info
+	@players.each do |player|
+		SportStats::Player.new(player)
+	end
+end
 ```
 
 So my biggest challenge at first was getting the information to display properly. This was basically impossible with all the looping, and I realized I needed proper objects. This also lead me to find a very handy ruby gem called Command Line Reporter (Actually, another student named Brian Reynolds pointed me in that direction. Shout out to Brian!). CLR does a lot of neat things, but most importantly for me, it provides us with a nice looking table for our information. 
@@ -107,6 +107,7 @@ So my biggest challenge at first was getting the information to display properly
 ![](http://i.imgur.com/KMwoIMZ.png)
 
 Here's how I set that up (note: you have to extend CommandLineReporter)
+
 ```
 def self.display_stats
     table(:border => true) do
@@ -152,6 +153,7 @@ def self.display_stats
 
 We set up a table, and give it a border. The 'row do' line creates a row, and the columns, well, create columns. 
 Here, I have hard coded the values of the categories. This works for the general overview of the teams, but not for the rosters, since they have different categories.
+
 ```
 def self.print_roster
     obj = SportStats::Player.all.first # grab a player object to get the titles
