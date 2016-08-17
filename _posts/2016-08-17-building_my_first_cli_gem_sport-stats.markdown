@@ -14,7 +14,7 @@ After spending a few days spinning my wheels, I realized I had it set up all wro
 
 When setting up the Player class, I struggled a bit with all the different parameters. They all have similar parameters, but each league has a few specific to that sport. I remembered a lesson where we had to pass in an array of arguments, and had a total AHA moment.
 
-This is when I learned about the magical ||= operator in ruby. 
+This is when I learned about the magical ```||=``` operator in ruby. 
 
 ```
 class SportStats::Player
@@ -47,7 +47,7 @@ class SportStats::Player
 end
 ```
 
-All 3 of the sports have number, name, position, height/weight,and college columns. That leaves us with 6 other attributes we may or may not have. That's where ||= comes in! If the value to the left is nil or false, it will check the value on the right. If the value on the right exists, it sets the variable to that value. If not, it remains nil.
+All 3 of the sports have number, name, position, height/weight,and college columns. That leaves us with 6 other attributes we may or may not have. That's where ```||=``` comes in! If the value to the left is nil or false, it will check the value on the right. If the value on the right exists, it sets the variable to that value. If not, it remains nil.
 
 The params that get passed into the Player class look like this:
 ```
