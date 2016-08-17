@@ -55,6 +55,7 @@ The params that get passed into the Player class look like this:
 ```
 
 So if the hash contains keys that match our instance variable names, the value will get assigned to the proper variable. On that note, another handy thing I learned in this project is the .zip method. The .zip method will merge two arrays into either an array or a hash. I chose hash. Here's my roster scraping method:
+
 ```
 def self.scrape_roster(input, doc)
     doc.search(".standings-row td").each do |x|
