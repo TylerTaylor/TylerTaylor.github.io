@@ -54,7 +54,9 @@ The params that get passed into the Player class look like this:
 {"NO."=>"21", "NAME"=>"Ian Clark", "POS"=>"SG", "AGE"=>"25", "HT"=>"6-3", "WT"=>"175", "COLLEGE"=>"Belmont", "2016-2017 SALARY"=>"$980,431"}
 ```
 
-So if the hash contains keys that match our instance variable names, the value will get assigned to the proper variable. On that note, another handy thing I learned in this project is the .zip method. The .zip method will merge two arrays into either an array or a hash. I chose hash. Here's my roster scraping method:
+So if the hash contains keys that match our instance variable names, the value will get assigned to the proper variable. On that note, another handy thing I learned in this project is the .zip method. The .zip method will merge two arrays into either an array or a hash. I chose hash. 
+
+Here's my roster scraping method.
 
 ```
 def self.scrape_roster(input, doc)
@@ -103,7 +105,7 @@ So my biggest challenge at first was getting the information to display properly
 
 ![](http://i.imgur.com/KMwoIMZ.png)
 
-Here's how I set that up (note: you have to extend CommandLineReporter):
+Here's how I set that up (note: you have to extend CommandLineReporter)
 ```
 def self.display_stats
     table(:border => true) do
