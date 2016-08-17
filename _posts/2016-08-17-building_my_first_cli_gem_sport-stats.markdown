@@ -60,34 +60,34 @@ Here's my roster scraping method.
 
 ```
 def self.scrape_roster(input, doc)
-	doc.search(".standings-row td").each do |x|
-		if input == x.css("span.team-names").text # if x is equal to the team name input
-			team_page_link = "http://espn.com#{x.search('a').attr('href').value}"
-			team_page = Nokogiri::HTML(open(team_page_link)) 
-			@players = []
+  doc.search(".standings-row td").each do |x|
+    if input == x.css("span.team-names").text # if x is equal to the team name input
+      team_page_link = "http://espn.com#{x.search('a').attr('href').value}"
+      team_page = Nokogiri::HTML(open(team_page_link)) 
+      @players = []
 
-			team_page.css("span.link-text").each do |text|
-				if text.text == "Roster"
-					link = Nokogiri::HTML(open(text.parent.attr('href')))
+      team_page.css("span.link-text").each do |text|
+        if text.text == "Roster"
+          link = Nokogiri::HTML(open(text.parent.attr('href')))
 
-					@categories = [] # These will be used for player attributes
-					link.search('tr.colhead').first.children.each do |cat|
-						@categories << cat.text
-					end
-
-					link.css('tr.evenrow, tr.oddrow').each do |word|
-						player_info = [] # name, age, etc, player attr values
-						word.children.each do |word|
-							player_info << word.text
-						end
-
-						player_line = Hash[@categories.zip(player_info)]
-						@players << player_line
-					end
-				end # end if
-			end # end .each
-		end # end if
-	end # end doc.search
+          @categories = [] # These will be used for player attributes
+          link.search('tr.colhead').first.children.each do |cat|
+            @categories << cat.text
+          end
+					
+          link.css('tr.evenrow, tr.oddrow').each do |word|
+            player_info = [] # name, age, etc, player attr values
+            word.children.each do |word|
+              player_info << word.text
+	          end
+						
+            player_line = Hash[@categories.zip(player_info)]
+            @players << player_line
+          end
+        end # end if
+      end # end .each
+    end # end if
+  end # end doc.search
 end
 ```
 
