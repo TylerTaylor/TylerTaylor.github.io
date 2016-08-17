@@ -110,45 +110,45 @@ Here's how I set that up (note: you have to extend CommandLineReporter)
 
 ```
 def self.display_stats
-    table(:border => true) do
-      row do
-        column('', :width => 2, :align => 'left')
-        column('Team', :width => 25)
-        column('W', :width => 5)
-        column('L', :width => 5)
-        column('PCT', :width => 5)
-        column('GB', :width => 5)
-        column('HOME', :width => 5)
-        column('ROAD', :width => 5)
-        column('DIV', :width => 5)
-        column('CONF', :width => 5)
-        column('PPG', :width => 5)
-        column('OPP PPG', :width => 5)
-        column('DIFF', :width => 5)
-        column('STRK', :width => 5)
-        column('LAST 10', :width => 5)
-      end
-      SportStats::Team.all.each.with_index(1) do |team, index|
-        row do
-          column("#{index}")
-          column(team.name)
-          column(team.wins)
-          column(team.losses)
-          column(team.pct)
-          column(team.gb)
-          column(team.home)
-          column(team.road)
-          column(team.div)
-          column(team.conf)
-          column(team.ppg)
-          column(team.opp_ppg)
-          column(team.diff)
-          column(team.strk)
-          column(team.l10)
-        end
-      end
-    end
-  end
+	table(:border => true) do
+		row do
+			column('', :width => 2, :align => 'left')
+			column('Team', :width => 25)
+			column('W', :width => 5)
+			column('L', :width => 5)
+			column('PCT', :width => 5)
+			column('GB', :width => 5)
+			column('HOME', :width => 5)
+			column('ROAD', :width => 5)
+			column('DIV', :width => 5)
+			column('CONF', :width => 5)
+			column('PPG', :width => 5)
+			column('OPP PPG', :width => 5)
+			column('DIFF', :width => 5)
+			column('STRK', :width => 5)
+			column('LAST 10', :width => 5)
+		end
+		SportStats::Team.all.each.with_index(1) do |team, index|
+			row do
+				column("#{index}")
+				column(team.name)
+				column(team.wins)
+				column(team.losses)
+				column(team.pct)
+				column(team.gb)
+				column(team.home)
+				column(team.road)
+				column(team.div)
+				column(team.conf)
+				column(team.ppg)
+				column(team.opp_ppg)
+				column(team.diff)
+				column(team.strk)
+				column(team.l10)
+			end
+		end
+	end
+end
 ```
 
 We set up a table, and give it a border. The 'row do' line creates a row, and the columns, well, create columns. 
