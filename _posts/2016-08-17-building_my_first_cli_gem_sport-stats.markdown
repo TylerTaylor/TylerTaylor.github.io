@@ -92,6 +92,7 @@ def self.scrape_roster(input, doc)
 ```
 
 You can see I set up a categories array, and a player info array. Nokogiri scrapes the specified elements and puts them in their proper container. This is basically how I had the whole program set up before. It would collect the elements like above, then I'd use a loop to print each value out. I had to do this for each league, and each roster. It was very, very messy. Now it neatly combines the player information, then passes it to a make_players method that creates each individual Player object with proper attributes.
+
 ```
 def self.make_players(team, doc)
     self.scrape_roster(team, doc) # scrape_roster returns @players with a hash of their info
