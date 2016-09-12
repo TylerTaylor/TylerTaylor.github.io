@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Sinatra Assessment - Animal Rescue"
-date:   2016-09-12 15:15:01 +0000
+date:   2016-09-12 11:15:02 -0400
 ---
 
 
@@ -53,4 +53,4 @@ The layout file is also where I put the flash message container. I set it up wit
 
 That was such a small detail but felt really cool to implement.
 
-Overall I had a blast building this project, and have grown to really love Sinatra in the process. It is a very lightweight framework to build off of, and I'm sure I'll be using it for other projects down the road. You can view all of the code for this project on github: https://github.com/TylerTaylor/sinatra-final-animal-rescue
+Overall I had a blast building this project, and have grown to really love Sinatra in the process. It is a very lightweight framework to build off of, and I'm sure I'll be using it for other projects down the road. You can view all of the code for this project on github: [https://github.com/TylerTaylor/sinatra-final-animal-rescue](https://github.com/TylerTaylor/sinatra-final-animal-rescue)
