@@ -56,7 +56,7 @@ end
 
 This creates several helper routes for us, namely new_director_movie_path.
 
-Now the new movie form needs to take in director attributes. Let's nest a form! We'll use fields_for on our form builder (f) and create fields for our director. If we already have a director in mind, which in this case we do, we need to tell the form about it. So the new action would look something like this:
+Now the new movie form needs to take in director attributes. Let's nest a form! We'll use ```fields_for``` on our form builder (f) and create fields for our director. If we already have a director in mind, which in this case we do, we need to tell the form about it. So the new action would look something like this:
 
 ```
 def new
@@ -70,7 +70,7 @@ def new
 end
 ```
 
-And the form. Notice how we check ```<% if params[:director_id] %>``` and pass in the director's name as a value if one is present. @director is a blank director object in the new action, unless the params come in with a director_id, then @director should have a name. 
+And the form. Notice how we check ```<% if params[:director_id] %>``` and pass in the director's name as a value if one is present. ```@director``` is a blank director object in the new action, unless the params come in with a ```:director_id```, then ```@director``` should have a name. 
 
 ```
 <%= form_for(@movie) do |f| %>
@@ -105,7 +105,7 @@ def director_attributes=(director_attribute)
 end
 ```
 
-This method accepts the desired attributes as params, and searches for a director with a matching name. ```first_or_create``` will either find a matching director object or create a new object. Then we set the result to self.director. Now when a new movie gets submitted, a director is either created or updated.
+This method accepts the desired attributes as params, and searches for a director with a matching name. ```first_or_create``` will either find a matching director object or create a new object. Then we store the result as self.director. Now when a new movie gets submitted, a director is either created or updated.
 
 # Third Hurdle
 
