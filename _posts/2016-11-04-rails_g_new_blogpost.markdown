@@ -7,7 +7,7 @@ date:   2016-11-04 15:02:40 -0400
 
 FilmSpot is a simple web app to keep track of movies you've watched, and whether you liked them. I watch a ton of movies, to the point that it's hard to remember everything I've seen, much less my thoughts on all of them. Thus, FilmSpot was born.
 
-## First Hurdle
+# First Hurdle
  
 I knew I would have models for users, movies, viewings (an instance of a user watching a movie), and ratings. After digging in, I realized that ratings could just be an attribute of viewings, so I refactored. I also included models for actors, and directors, but those aren't as integral to the app as of right now.
 
@@ -42,7 +42,7 @@ Working on the Movie class, I learned about alias_attribute. I was playing in th
 
 The viewings table is a join table for Users and Movies. It has an attribute for rating, which the user will submit (one of the project requirements).
 
-## Second Hurdle
+# Second Hurdle
 
 Let's talk about nested resources, and nested forms.
 
@@ -107,7 +107,7 @@ end
 
 This method accepts the desired attributes as params, and searches for a director with a matching name. ```first_or_create``` will either find a matching director object or create a new object. Then we set the result to self.director. Now when a new movie gets submitted, a director is either created or updated.
 
-## Third Hurdle
+# Third Hurdle
 
 We were required to include a class level ActiveRecord scope method and create a URL to see the working feature. Since this is a list of movies, I went with 'most viewed.'
 
