@@ -127,6 +127,15 @@ class Viewing
 end
 ```
 
+```
+def create
+  @user.viewings.build(viewing_params)
+  @user.save
+  Movie.reset_counters(@movie, :viewings)
+  redirect_to movie_path(@movie)
+end
+```
+
 The viewing instance *belongs to* a movie. Now, each time a viewing occurs it will add to the viewings count of the movie. In order to keep track of that, I added a "viewings_count" column in the movies table. In the viewings#create method, I built an instance of a user's viewing, passing in the movie_id, user_id, and rating. Then .reset_counters runs an SQL count query and sets the count to the right number. Then ```self.most_viewed``` returns a collection of viewings, sorted by their view count.
 
 ```
