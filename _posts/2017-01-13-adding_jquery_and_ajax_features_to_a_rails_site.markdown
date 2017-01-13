@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Adding jQuery and AJAX features to a Rails site"
-date:   2017-01-13 18:19:04 +0000
+date:   2017-01-13 13:19:05 -0500
 ---
 
 
@@ -18,9 +18,9 @@ AJAX to the rescue!
 
 Let's walk through those 4 steps and see how easy it is to convert this to an AJAX call.
 
-We've found our movie. Now we click "Yes, I've seen this movie". This link goes to something like '/users/5/viewings/new?movie_id=36' which tells me it's trying to create a new _viewing_.
+We've found our movie. Now we click "Yes, I've seen this movie". This link goes to something like `/users/5/viewings/new?movie_id=36` which tells me it's trying to create a new `viewing`.
 
-So, in the _ViewingsController_, our link hits the _new_ action. We don't want this to render the whole site again with a new form, we want this to load _only the form_. This can save us a lot of unnecessary loading time.
+So, in the `ViewingsController`, our link hits the `new` action. We don't want this to render the whole site again with a new form, we want this to load _only the form_. This can save us a lot of unnecessary loading time.
 
 ```
 def new
