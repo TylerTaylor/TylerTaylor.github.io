@@ -114,7 +114,7 @@ end
 Then, in the AJAX callback, our response data will be a JSON object representing an instance of a viewing, like so:
 
 ```
-Object {id: 123, user_id: 5, movie_id: 33, created_at: "2017-01-13"}
+Object {id: 123, user_id: 5, movie_id: 33, rating: 4, created_at: "2017-01-13"}
 ```
 
 I created some functions to format and show the newly created rating, which also get called in the AJAX callback function.
