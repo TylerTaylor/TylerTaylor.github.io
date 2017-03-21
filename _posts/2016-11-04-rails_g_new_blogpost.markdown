@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rails g new BlogPost"
+title:  "Rails g BlogPost"
 date:   2016-11-04 15:02:40 -0400
 ---
 
