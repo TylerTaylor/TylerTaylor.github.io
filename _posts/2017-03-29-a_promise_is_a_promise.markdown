@@ -106,6 +106,7 @@ Here is your Mulligatawny.
 3. In this example, we have `fulfilledSoup => {...}` in `.then`. The value of `fulfilledSoup` is the value you pass in your Promise `resolve(value)`. So in our case, that will be `soupToOrder`.
 4. We have `error => {...}` in `.catch`. The `error` value is whatever you pass in your Promise `reject(value)`. It will be `reason` in this case.
 
+
 ## Chaining Promises
 
 Promises can be chained.
