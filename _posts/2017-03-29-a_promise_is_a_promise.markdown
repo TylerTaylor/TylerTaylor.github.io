@@ -101,6 +101,7 @@ getSoup();
 Here is your Mulligatawny.
 ```
 
+
 1. We call our function, `getSoup`. In this function, we will consume our Promise `moveToRight`
 2. We want to do something once the Promise is _resolved_ or _rejected_. We use `.then` and `.catch` to handle this.
 3. In this example, we have `fulfilledSoup => {...}` in `.then`. The value of `fulfilledSoup` is the value you pass in your Promise `resolve(value)`. So in our case, that will be `soupToOrder`.
