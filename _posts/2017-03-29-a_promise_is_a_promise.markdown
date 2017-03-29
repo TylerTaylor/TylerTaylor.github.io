@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Promise is a Promise"
-date:   2017-03-29 16:08:07 +0000
+date:   2017-03-29 12:08:08 -0400
 ---
 
 
@@ -10,11 +10,11 @@ A JavaScript Promise is an _object_ that represents the eventual result of an as
 Promises will start doing whatever task you assign it as soon as the Promise constructor is invoked. This means Promises are _eager_.
 
 A Promise can be in one of 3 possible states:
-* Pending: not yet fulfilled or rejected
+* __Pending:__ not yet fulfilled or rejected
 
-* Fulfilled: A result is available. `onFulfilled()` will be called (e.g., `resolve()` gets called)
+* __Fulfilled:__ A result is available. `onFulfilled()` will be called (e.g., `resolve()` gets called)
 
-* Rejected: An error occured. `onRejected()` will be called (e.g., `reject()` gets called)
+* __Rejected:__ An error occured. `onRejected()` will be called (e.g., `reject()` gets called)
 
 If a Promise is not pending (it has been resolved or rejected), that Promise is __settled__. A settled Promise is immutable. Calling `resolve()` or `reject()` on a settled Promise will have no effect.
 
