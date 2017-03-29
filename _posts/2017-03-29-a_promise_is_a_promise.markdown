@@ -150,6 +150,9 @@ const getSoup = () => {
 }
 
 getSoup();
+
+/* output */
+Here is your Mulligatawny.
 ```
 
 We're calling `getSoup()`, which will consume our Promise to `moveToRight`. _Then_ we'll call `orderSoup` and pass it the result of the `resolve(soupToOrder)` from `moveToRight`. If the soup maker is satisfied, _then_ you receive your `fulfilledSoup`. We're just passing our soup object down the line.
