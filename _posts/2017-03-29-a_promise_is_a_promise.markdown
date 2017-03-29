@@ -107,7 +107,7 @@ Here is your Mulligatawny.
 4. We have `error => {...}` in `.catch`. The `error` value is whatever you pass in your Promise `reject(value)`. It will be `reason` in this case.
 
 
-## Chaining Promises
+# Chaining Promises
 
 Promises can be chained.
 
