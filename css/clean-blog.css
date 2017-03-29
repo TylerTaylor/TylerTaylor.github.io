@@ -16,6 +16,11 @@ p {
 p a {
   text-decoration: underline;
 }
+
+.post-heading h1 {
+  margin-top: 0px;
+}
+
 h1,
 h2,
 h3,
