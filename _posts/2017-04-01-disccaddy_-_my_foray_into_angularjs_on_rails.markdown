@@ -61,9 +61,9 @@ This will create a folder in `vendor/assets` called `bower_components`. We don't
 
 At this point, we need to add these new dependencies to our `application.js` file, and remove any references to turbolinks. Turbolinks and Angular/jQuery don't play well together.
 
-`application.js`
-
 ```
+// application.js
+
 //= require jquery
 //= require angular
 //= require angular-ui-router
