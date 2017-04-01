@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "DiscCaddy - My Foray Into AngularJS on Rails"
-date:   2017-04-01 16:38:37 +0000
+date:   2017-04-01 12:38:38 -0400
 ---
 
 
