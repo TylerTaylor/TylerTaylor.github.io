@@ -128,7 +128,7 @@ In order for this Angular app to show up in our Rails app, we'll pick an HTML el
 ...
 ```
 
-Now let's create an angular route. In `app/assets/javascripts` create a file called `routes.js`:
+Now let's create an Angular route. In `app/assets/javascripts` create a file called `routes.js`:
 
 ```
 (function () {
