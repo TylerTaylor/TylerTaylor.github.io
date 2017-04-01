@@ -174,7 +174,9 @@ Our simple `HomeController` looks like this:
 And our `home` template looks like this:
 
 ```
+{% raw %}
 <h1>Hello, {{ vm.compliment }}</h1>
+{% endraw %}
 ```
 
 Voila! Angular application communicating with our Rails application!
