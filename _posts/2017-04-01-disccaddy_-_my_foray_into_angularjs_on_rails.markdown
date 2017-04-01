@@ -19,7 +19,7 @@ The first major obstacle was figuring out how to get AngularJS and Rails to play
 
 To do this, we'll use [Bower. ](https://bower.io/) Bower is a package manager - meaning it will find, download, and save the stuff you're looking for. (Note: you may have to install bower on your local machine, in which case follow the instructions in the provided link.)
 
-Let's add the `bower-rails` gem to our Gemfile. While we're there, let's go ahead and add `angular-rails-templates`, which allows us to use Angular templates in our Rails asset pipeline. This removes the need for AJAX calls to retrieve the templates. Also, we'll add the `active-model-serializers` gem, which lets Rails serialize your chosen models into JSON for Angular to use.
+Let's add the `bower-rails` gem to our Gemfile. While we're there, let's go ahead and add `angular-rails-templates`, which allows us to use Angular templates in our Rails asset pipeline. This removes the need for AJAX calls to retrieve the templates. Also, we'll add the `active_model_serializers` gem, which lets Rails serialize your chosen models into JSON for Angular to use.
 
 `Gemfile.rb`
 
