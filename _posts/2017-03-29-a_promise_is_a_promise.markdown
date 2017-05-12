@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Promise is a Promise"
+title:  A Promise is a Promise
 date:   2017-03-29 12:08:08 -0400
 ---
 
@@ -233,7 +233,7 @@ I've been using a lot of Promises in AngularJS. Without getting too in depth on 
 ```
 function getData() {
   return $http.get('/route/to/get/data')
-	          .then(doSomethingWithData)
+	      .then(doSomethingWithData)
 }
 ```
 
